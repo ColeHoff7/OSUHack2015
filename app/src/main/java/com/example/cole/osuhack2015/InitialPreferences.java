@@ -9,9 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
@@ -27,25 +26,25 @@ public class InitialPreferences extends Activity {
         setContentView(R.layout.activity_initial_preferences);
         Intent intent = getIntent();
 
-        final LinearLayout ll = (LinearLayout) findViewById(R.id.ll);
-        ll.setOrientation(LinearLayout.VERTICAL);
-        food = new CheckBox(this);
+        final RelativeLayout rl = (RelativeLayout) findViewById(R.id.prefLayout);
+        //rl.setOrientation(RelativeLayout.VERTICAL);
+        /*food = new CheckBox(this);
         food.setText("Food");
-        ll.addView(food);
+        rl.addView(food);
 
         night = new CheckBox(this);
         night.setText("Night Life");
-        ll.addView(night);
+        rl.addView(night);*/
 
-        listener(ll);
+       // listener(rl);
     }
 
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // Handle action bar item clicks here. The action bar wirl
+        // automaticarly handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
@@ -56,8 +55,8 @@ public class InitialPreferences extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void listener(final LinearLayout ll){
-        //CheckBox food = (CheckBox) findViewById(R.id.food);
+    /*public void listener(final RelativeLayout rl){
+        //food = (CheckBox) findViewById(R.id.food);
         food.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -65,20 +64,21 @@ public class InitialPreferences extends Activity {
                 //is food checked?
                 if (((CheckBox) v).isChecked()) {
                     //Toast.makeText(InitialPreferences.this, "Food Added", Toast.LENGTH_LONG).show();
-                    foodClick(ll);
+                    foodClick(rl);
                 }
 
             }
         });
-    }
+    }*/
 
-    public void foodClick(LinearLayout ll){
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    public void foodClick(RelativeLayout rl){
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         params.leftMargin = 100;
-
+        params.addRule(RelativeLayout.BELOW, food.getId());
+        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
         CheckBox burger = new CheckBox(this);
         burger.setText("Burgers");
-        ll.addView(burger, params);
+        rl.addView(burger, params);
 
     }
 }
