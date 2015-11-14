@@ -15,5 +15,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        // Repository for the Esri Geotrigger SDK for Android
+        maven {
+            url 'https://esri.bintray.com/android'
+        }
     }
 }
