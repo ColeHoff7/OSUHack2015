@@ -1,15 +1,19 @@
 package com.example.cole.osuhack2015;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 
 
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
@@ -34,5 +38,11 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initialPreferences(View view){
+        //Continues to the next screen when button is pressed where users enter their preferences
+        Intent i = new Intent(this, InitialPreferences.class);
+        startActivity(i);
     }
 }
