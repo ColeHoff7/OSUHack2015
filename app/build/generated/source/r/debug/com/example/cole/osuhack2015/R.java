@@ -412,30 +412,29 @@ containing a value of this type.
         public static final int action_settings=0x7f0c002a;
         public static final int adjust_height=0x7f0c0000;
         public static final int adjust_width=0x7f0c0001;
+        public static final int arcade=0x7f0c0021;
+        public static final int art=0x7f0c0022;
         public static final int book_now=0x7f0c0010;
+        public static final int burger=0x7f0c001b;
         public static final int button=0x7f0c0029;
-        public static final int button2=0x7f0c0026;
         public static final int buyButton=0x7f0c000c;
         public static final int buy_now=0x7f0c0011;
         public static final int buy_with_google=0x7f0c0012;
-        public static final int checkBox=0x7f0c001b;
-        public static final int checkBox10=0x7f0c0025;
-        public static final int checkBox2=0x7f0c001c;
-        public static final int checkBox3=0x7f0c001d;
-        public static final int checkBox4=0x7f0c001e;
-        public static final int checkBox5=0x7f0c001f;
-        public static final int checkBox6=0x7f0c0021;
-        public static final int checkBox7=0x7f0c0022;
-        public static final int checkBox8=0x7f0c0023;
-        public static final int checkBox9=0x7f0c0024;
+        public static final int cafe=0x7f0c001c;
+        public static final int casinos=0x7f0c0023;
+        public static final int chinese=0x7f0c001d;
         public static final int classic=0x7f0c0014;
+        public static final int deli=0x7f0c001e;
         public static final int donate_with_google=0x7f0c0013;
+        public static final int festivals=0x7f0c0024;
         public static final int grayscale=0x7f0c0015;
         public static final int holo_dark=0x7f0c0007;
         public static final int holo_light=0x7f0c0008;
         public static final int hybrid=0x7f0c0003;
         public static final int match_parent=0x7f0c000e;
+        public static final int mexican=0x7f0c001f;
         public static final int monochrome=0x7f0c0016;
+        public static final int museums=0x7f0c0025;
         public static final int none=0x7f0c0002;
         public static final int normal=0x7f0c0004;
         public static final int prefLayout=0x7f0c0018;
@@ -445,6 +444,7 @@ containing a value of this type.
         public static final int scrollView=0x7f0c0017;
         public static final int selectionDetails=0x7f0c000d;
         public static final int strict_sandbox=0x7f0c000b;
+        public static final int submit=0x7f0c0026;
         public static final int terrain=0x7f0c0006;
         public static final int textView=0x7f0c0028;
         public static final int textView2=0x7f0c0019;
@@ -459,6 +459,7 @@ containing a value of this type.
     public static final class layout {
         public static final int activity_initial_preferences=0x7f040000;
         public static final int activity_main=0x7f040001;
+        public static final int activity_map=0x7f040002;
     }
     public static final class menu {
         public static final int menu_initial_preferences=0x7f0b0000;
@@ -509,6 +510,7 @@ containing a value of this type.
         public static final int store_picture_message=0x7f060024;
         public static final int store_picture_title=0x7f060025;
         public static final int title_activity_initial_preferences=0x7f060026;
+        public static final int title_activity_map=0x7f060027;
         public static final int wallet_buy_button_place_holder=0x7f06001c;
     }
     public static final class style {

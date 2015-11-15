@@ -92,6 +92,7 @@
     <eat-comment/>
     <string name="title_activity_initial_preferences">Check Everything You Are Interested In!
     </string>
+    <string name="title_activity_map">Map</string>
     <!-- From: file:/C:/Users/Cole/AndroidStudioProjects/OSUHack2015/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>

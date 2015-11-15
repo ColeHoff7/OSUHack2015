@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Burgers"
-        android:id="@+id/checkBox"
+        android:id="@+id/burger"
         android:layout_below="@+id/textView3"
         android:layout_alignStart="@+id/textView2"
         android:checked="false" />
@@ -49,37 +49,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cafes"
-        android:id="@+id/checkBox2"
-        android:layout_below="@+id/checkBox"
-        android:layout_alignStart="@+id/checkBox"
+        android:id="@+id/cafe"
+        android:layout_below="@+id/burger"
+        android:layout_alignStart="@+id/burger"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chinese"
-        android:id="@+id/checkBox3"
-        android:layout_below="@+id/checkBox2"
-        android:layout_alignStart="@+id/checkBox2"
+        android:id="@+id/chinese"
+        android:layout_below="@+id/cafe"
+        android:layout_alignStart="@+id/cafe"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delis"
-        android:id="@+id/checkBox4"
-        android:layout_below="@+id/checkBox3"
-        android:layout_alignStart="@+id/checkBox3"
+        android:id="@+id/deli"
+        android:layout_below="@+id/chinese"
+        android:layout_alignStart="@+id/chinese"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mexican"
-        android:id="@+id/checkBox5"
+        android:id="@+id/mexican"
         android:checked="false"
-        android:layout_below="@+id/checkBox4"
-        android:layout_alignStart="@+id/checkBox4" />
+        android:layout_below="@+id/deli"
+        android:layout_alignStart="@+id/deli" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Entertainment"
         android:id="@+id/textView4"
-        android:layout_below="@+id/checkBox5"
+        android:layout_below="@+id/mexican"
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp" />
 
@@ -95,54 +95,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Arcades"
-        android:id="@+id/checkBox6"
+        android:id="@+id/arcade"
         android:layout_below="@+id/textView4"
-        android:layout_alignStart="@+id/checkBox5"
+        android:layout_alignStart="@+id/mexican"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Art"
-        android:id="@+id/checkBox7"
+        android:id="@+id/art"
         android:checked="false"
-        android:layout_below="@+id/checkBox6"
-        android:layout_alignStart="@+id/checkBox6" />
+        android:layout_below="@+id/arcade"
+        android:layout_alignStart="@+id/arcade" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Casinos"
-        android:id="@+id/checkBox8"
+        android:id="@+id/casinos"
         android:checked="false"
-        android:layout_below="@+id/checkBox7"
-        android:layout_alignStart="@+id/checkBox7" />
+        android:layout_below="@+id/art"
+        android:layout_alignStart="@+id/art" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Festivals"
-        android:id="@+id/checkBox9"
-        android:layout_below="@+id/checkBox8"
-        android:layout_alignStart="@+id/checkBox8"
+        android:id="@+id/festivals"
+        android:layout_below="@+id/casinos"
+        android:layout_alignStart="@+id/casinos"
         android:checked="false" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Museums"
-        android:id="@+id/checkBox10"
-        android:layout_below="@+id/checkBox9"
-        android:layout_alignStart="@+id/checkBox9"
+        android:id="@+id/museums"
+        android:layout_below="@+id/festivals"
+        android:layout_alignStart="@+id/festivals"
         android:checked="false" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:id="@+id/button2"
-        android:layout_below="@+id/checkBox10"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/submit"
+        android:layout_below="@+id/museums"
+        android:layout_centerHorizontal="true"
+        android:onClick="submitData"/>
 
 
 

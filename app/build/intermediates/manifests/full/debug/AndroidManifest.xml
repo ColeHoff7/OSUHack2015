@@ -30,6 +30,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.cole.osuhack2015.MainActivity" />
         </activity>
+        <activity
+            android:name="com.example.cole.osuhack2015.Map"
+            android:label="@string/title_activity_map"
+            android:parentActivityName="com.example.cole.osuhack2015.InitialPreferences" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.cole.osuhack2015.InitialPreferences" />
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

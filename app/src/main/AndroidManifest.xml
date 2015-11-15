@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.cole.osuhack2015.MainActivity" />
         </activity>
+        <activity
+            android:name=".Map"
+            android:label="@string/title_activity_map"
+            android:parentActivityName=".InitialPreferences" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.cole.osuhack2015.InitialPreferences" />
+        </activity>
     </application>
 
 </manifest>

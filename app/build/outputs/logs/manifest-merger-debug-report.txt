@@ -55,6 +55,14 @@ ADDED from AndroidManifest.xml:23:13
 		ADDED from AndroidManifest.xml:24:17
 	android:value
 		ADDED from AndroidManifest.xml:25:17
+activity#com.example.cole.osuhack2015.Map
+ADDED from AndroidManifest.xml:27:9
+	android:label
+		ADDED from AndroidManifest.xml:29:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:30:13
+	android:name
+		ADDED from AndroidManifest.xml:28:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.esri.android.geotrigger:geotrigger-sdk:1.2.0:7:5

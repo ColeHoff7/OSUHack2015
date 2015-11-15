@@ -2,6 +2,7 @@ package com.example.cole.osuhack2015;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,8 +17,8 @@ import android.widget.Toast;
 
 public class InitialPreferences extends Activity {
 
-    CheckBox food;
-    CheckBox night;
+    public static final String PREFS_NAME = "MyPrefsFile";
+    boolean[] prefs = new boolean[10]; //saving all the preferences in their respective booleans
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +27,9 @@ public class InitialPreferences extends Activity {
         setContentView(R.layout.activity_initial_preferences);
         Intent intent = getIntent();
 
-        final RelativeLayout rl = (RelativeLayout) findViewById(R.id.prefLayout);
-        //rl.setOrientation(RelativeLayout.VERTICAL);
-        /*food = new CheckBox(this);
-        food.setText("Food");
-        rl.addView(food);
+        SharedPreferences pref = getSharedPreferences(PREFS_NAME, 0);
+        listener();
 
-        night = new CheckBox(this);
-        night.setText("Night Life");
-        rl.addView(night);*/
-
-       // listener(rl);
     }
 
 
@@ -55,30 +48,157 @@ public class InitialPreferences extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*public void listener(final RelativeLayout rl){
-        //food = (CheckBox) findViewById(R.id.food);
-        food.setOnClickListener(new View.OnClickListener() {
-
+    public void listener(){
+        CheckBox burger = (CheckBox) findViewById(R.id.burger);
+        burger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //is food checked?
                 if (((CheckBox) v).isChecked()) {
-                    //Toast.makeText(InitialPreferences.this, "Food Added", Toast.LENGTH_LONG).show();
-                    foodClick(rl);
+                    itemClick(0,true);
                 }
-
+                else{
+                    itemClick(0,false);
+                }
             }
         });
-    }*/
 
-    public void foodClick(RelativeLayout rl){
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        params.leftMargin = 100;
-        params.addRule(RelativeLayout.BELOW, food.getId());
-        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
-        CheckBox burger = new CheckBox(this);
-        burger.setText("Burgers");
-        rl.addView(burger, params);
+        CheckBox cafe = (CheckBox) findViewById(R.id.cafe);
+        cafe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(1,true);
+                }
+                else{
+                    itemClick(1,false);
+                }
+            }
+        });
 
+        CheckBox chinese = (CheckBox) findViewById(R.id.chinese);
+        chinese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(2, true);
+                } else {
+                    itemClick(2, false);
+                }
+            }
+        });
+
+        CheckBox deli = (CheckBox) findViewById(R.id.deli);
+        deli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(3, true);
+                } else {
+                    itemClick(3, false);
+                }
+            }
+        });
+
+        CheckBox mexican = (CheckBox) findViewById(R.id.mexican);
+        mexican.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(4, true);
+                } else {
+                    itemClick(4, false);
+                }
+            }
+        });
+
+        CheckBox arcade = (CheckBox) findViewById(R.id.arcade);
+        arcade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(5, true);
+                } else {
+                    itemClick(5, false);
+                }
+            }
+        });
+
+        CheckBox art = (CheckBox) findViewById(R.id.art);
+        art.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(6, true);
+                } else {
+                    itemClick(6, false);
+                }
+            }
+        });
+
+        CheckBox casinos = (CheckBox) findViewById(R.id.casinos);
+        casinos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(7, true);
+                } else {
+                    itemClick(7, false);
+                }
+            }
+        });
+
+        CheckBox festivals = (CheckBox) findViewById(R.id.festivals);
+        festivals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(8, true);
+                } else {
+                    itemClick(8, false);
+                }
+            }
+        });
+
+        CheckBox museums = (CheckBox) findViewById(R.id.museums);
+        museums.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    itemClick(9, true);
+                } else {
+                    itemClick(9, false);
+                }
+            }
+        });
+    }
+
+    public void itemClick(int i, boolean b){
+        prefs[i] = b;
+        //Toast.makeText(getApplicationContext(),"toasty", Toast.LENGTH_LONG).show();
+    }
+
+    public void submitData(View view){
+        // We need an Editor object to make preference changes.
+        // All objects are from android.context.Context
+        SharedPreferences pref = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("burger", prefs[0]);
+        editor.putBoolean("cafe", prefs[1]);
+        editor.putBoolean("chinese", prefs[2]);
+        editor.putBoolean("deli", prefs[3]);
+        editor.putBoolean("mexican", prefs[4]);
+        editor.putBoolean("arcade", prefs[5]);
+        editor.putBoolean("art", prefs[6]);
+        editor.putBoolean("casinos", prefs[7]);
+        editor.putBoolean("festivals", prefs[8]);
+        editor.putBoolean("museums", prefs[9]);
+
+        // Commit the edits!
+        editor.commit();
+        /*Bundle b = new Bundle();
+        b.putBooleanArray("prefs",prefs);
+        i.putExtras(b);*/
+        Intent i = new Intent(this, Map.class);
+        startActivity(i);
     }
 }
