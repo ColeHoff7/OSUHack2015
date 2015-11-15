@@ -1,8 +1,11 @@
 package com.example.cole.osuhack2015;
 
+import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,7 +25,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
     }
+
 
 
     /**
@@ -39,8 +45,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng columbus = new LatLng(39.9833, -82.9833);
+        mMap.addMarker(new MarkerOptions().position(new LatLng(39.975,-82.9733)).title("Marker in Columbus"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(39.971,-82.9843)).title("Marker in Columbus"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(39.983,-82.9913)).title("Marker in Columbus"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(columbus));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(columbus, 11.0f));
+
+
     }
+
+
 }
