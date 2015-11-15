@@ -198,7 +198,7 @@ public class InitialPreferences extends Activity {
         /*Bundle b = new Bundle();
         b.putBooleanArray("prefs",prefs);
         i.putExtras(b);*/
-        Intent i = new Intent(this, Map.class);
+        Intent i = new Intent(this, MapsActivity.class);
         startActivity(i);
     }
 }
