@@ -1,5 +1,6 @@
 package com.example.cole.osuhack2015;
 
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    public static final String PREFS_NAME = "MyPrefsFile";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
+        //this is how you get the boolean values for the preferences gathered in the previous screen
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        boolean burger = settings.getBoolean("burger", false);
     }
 
 
@@ -46,8 +49,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
         LatLng columbus = new LatLng(39.9833, -82.9833);
-        mMap.addMarker(new MarkerOptions().position(new LatLng(39.975,-82.9733)).title("Marker in Columbus"));
-        mMap.addMarker(new MarkerOptions().position(new LatLng(39.971,-82.9843)).title("Marker in Columbus"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(39.975, -82.9733)).title("Marker in Columbus"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(39.971, -82.9843)).title("Marker in Columbus"));
         mMap.addMarker(new MarkerOptions().position(new LatLng(39.983,-82.9913)).title("Marker in Columbus"));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng(columbus));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(columbus, 11.0f));
